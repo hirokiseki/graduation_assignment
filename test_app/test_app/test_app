@@ -1,0 +1,26 @@
+コマンド集
+
+プロジェクトの作成
+python -m django startproject test_app
+
+プロジェクト内アプリの作成
+python manage.py startapp hello
+
+コードの実行
+python manage.py runserver
+
+DB、マイグレートの実行
+python manage.py makemigrations hello
+python manage.py migrate
+
+
+
+python manage.py createsuperuser
+username:admin
+mail:admin@admin.com
+pass:admin
+
+実行状態で
+localhost:8000/adminにアクセス
+
+空のオブジェクト

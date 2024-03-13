@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-88">
+        <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}">
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <p>{{msg|safe}}</p>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input id="excute" type="submit" value="実行">
+            <input id="save" type="submit" value="保存">
+        </form>
+        <p>{{ answer }}</p>
+        <table>
+            <tr>
+                <th>保存された式</th>
+            </tr>
+            {% for item in pastData %}
+            <tr>
+                <td>{{item.math_formula}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
