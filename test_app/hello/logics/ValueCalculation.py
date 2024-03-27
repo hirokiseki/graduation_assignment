@@ -1,19 +1,4 @@
-# Valueクラスを定義
-class Value:
-
-    # コンストラクタを定義
-    def __init__(self, value):
-
-        # 入力された式
-        self.value = value
-
-    # 表示用メソッド
-    def text(self):
-        pass
-
-    # 計算用メソッド
-    def excute(self):
-        pass
+from Value import *
 
 class ValueCalculation(Value):
     # コンストラクタ
@@ -57,17 +42,8 @@ class ValueCalculation(Value):
 
 
 
-
-
-        
-
 value = ("6 2 3 4 + - *")
 
 value1 = ValueCalculation(value)
 print(value1.text())
-
-
-
-value3 = ValueCalculation(value)
-print(value3.excute())
-
+print(value1.excute())
