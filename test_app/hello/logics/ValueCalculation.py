@@ -1,4 +1,8 @@
 from Value import *
+from CalculationPlus import *
+from CalculationMultiplied import *
+from CalculationMinus import *
+from CalculationDivided import *
 
 class ValueCalculation(Value):
     # コンストラクタ
@@ -20,26 +24,21 @@ class ValueCalculation(Value):
         return text.format(self.value)
 
     def excute(self):
-        stack = self.stack
         answer = []
 
-        def keisan(list, symbol):
-            tmpList = list[-2:]
-            text = "{0} {1} {2}".format(tmpList[0],symbol,tmpList[1])
-            tmpValue = eval(text)
-            return tmpValue
-
-        for item in stack:
-            if item in ("+", "-", "*", "/"):
-                tmpValue = keisan(answer, item)
-                answer.pop()
-                answer.pop()
-                answer.append(tmpValue)
+        for item in self.stack:
+            if item == "+":
+                CalculationPlus.keisan(answer)
+            elif item == "-":
+                CalculationMinus.keisan(answer)
+            elif item == "*":
+                CalculationMultiplied.keisan(answer)
+            elif item == "/":
+                CalculationDivided.keisan(answer)
             else:
                 answer.append(item)
 
         return answer
-
 
 
 value = ("6 2 3 4 + - *")

@@ -20,3 +20,6 @@ password admin
 # DMのマイグレーション
 python manage.py makemigrations hello(アプリの名前)
 python manage.py migrate
+
+クラスごとにファイルを分けてフォルダにまとめる
+演算子ごとにクラスを分ける
