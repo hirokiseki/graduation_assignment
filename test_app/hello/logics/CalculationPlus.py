@@ -12,3 +12,9 @@ class CalculationPlus:
         answerList.append(tmpValue)
 
         return answerList
+
+
+
+        #文字列をもらってそれが計算対象であることを認識する
+        #ファクトリークラス　スタックをオブジェクトとして処理
+        #スタックに積むものを半別して

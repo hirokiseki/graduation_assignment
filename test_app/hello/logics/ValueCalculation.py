@@ -44,5 +44,5 @@ class ValueCalculation(Value):
 value = ("6 2 3 4 + - *")
 
 value1 = ValueCalculation(value)
-print(value1.text())
+print(value1.anotherText())
 print(value1.excute())
